@@ -1,6 +1,7 @@
-import numpy as np
-import cv2
 import math
+
+import cv2
+import numpy as np
 
 
 def apply_min_size(sample, size, image_interpolation_method=cv2.INTER_AREA):
@@ -49,14 +50,14 @@ class Resize(object):
     """Resize sample to given size (width, height)."""
 
     def __init__(
-        self,
-        width,
-        height,
-        resize_target=True,
-        keep_aspect_ratio=False,
-        ensure_multiple_of=1,
-        resize_method="lower_bound",
-        image_interpolation_method=cv2.INTER_AREA,
+            self,
+            width,
+            height,
+            resize_target=True,
+            keep_aspect_ratio=False,
+            ensure_multiple_of=1,
+            resize_method="lower_bound",
+            image_interpolation_method=cv2.INTER_AREA,
     ):
         """Init.
 

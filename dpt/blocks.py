@@ -5,21 +5,19 @@ from .vit import (
     _make_pretrained_vitb_rn50_384,
     _make_pretrained_vitl16_384,
     _make_pretrained_vitb16_384,
-    forward_vit,
 )
 
 
 def _make_encoder(
-    backbone,
-    features,
-    use_pretrained,
-    groups=1,
-    expand=False,
-    exportable=True,
-    hooks=None,
-    use_vit_only=False,
-    use_readout="ignore",
-    enable_attention_hooks=False,
+        backbone,
+        features,
+        use_pretrained,
+        groups=1,
+        expand=False,
+        hooks=None,
+        use_vit_only=False,
+        use_readout="ignore",
+        enable_attention_hooks=False,
 ):
     if backbone == "vitl16_384":
         pretrained = _make_pretrained_vitl16_384(
@@ -319,13 +317,13 @@ class FeatureFusionBlock_custom(nn.Module):
     """Feature fusion block."""
 
     def __init__(
-        self,
-        features,
-        activation,
-        deconv=False,
-        bn=False,
-        expand=False,
-        align_corners=True,
+            self,
+            features,
+            activation,
+            deconv=False,
+            bn=False,
+            expand=False,
+            align_corners=True,
     ):
         """Init.
 

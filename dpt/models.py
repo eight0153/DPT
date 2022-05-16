@@ -7,9 +7,9 @@ from .blocks import (
     FeatureFusionBlock,
     FeatureFusionBlock_custom,
     Interpolate,
-    _make_encoder,
-    forward_vit,
+    _make_encoder
 )
+from .vit import forward_vit
 
 
 def _make_fusion_block(features, use_bn):
@@ -52,7 +52,6 @@ class DPT(BaseModel):
             False,  # Set to true of you want to train from scratch, uses ImageNet weights
             groups=1,
             expand=False,
-            exportable=False,
             hooks=hooks[backbone],
             use_readout=readout,
             enable_attention_hooks=enable_attention_hooks,
